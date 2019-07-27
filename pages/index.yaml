@@ -59,8 +59,8 @@ body:   |
       {% set log_path = '/home/pbui/.weechat/logs/irc.snoonet.#paperboy.weechatlog' %}
       {% set log_data = [l.strip().split('\t')[-1] for l in open(log_path) if 'bobbit' in l] %}
       {% for article in reversed(log_data[-20:]) %}
-      {% set article_site  = article.split(':')[0].strip() %}
-      {% set article_title = article.split(':')[1].split('@')[0].strip() %}
+      {% set article_site  = article.split(':', 1)[0].strip() %}
+      {% set article_title = article.split(':', 1)[1].split('@')[0].strip() %}
       {% set article_link  = article.split('@')[-1].strip() %}
       <tr>
         <td class="text-strong">{{ article_site }}</td>
