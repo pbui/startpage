@@ -10,6 +10,7 @@
 	<title>{{ page.title }}</title>
 
 	<!-- Bootstrap core CSS -->
+	<link rel="icon" href="https://yld.me/raw/starticon">
 	<link href="{{ page.prefix }}assets/css/blugold.css" rel="stylesheet">
 	<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
 
@@ -35,7 +36,12 @@
 			<li><a href="{{ item['link'] }}"><i class="fa {{ item['icon'] }}"></i> <span class="visible-md-inline visible-lg-inline">{{ item['name'] }}</span></a></li>
 			{% end %}
 		    </ul>
-		    <h1><i class="fa {{ page.icon }}"></i> {{ page.title }}</h1>
+		    <div class="visible-sm visible-md visible-lg">
+			<h1><i class="fa {{ page.icon }}"></i> {{ page.title }}</h1>
+		    </div>
+		    <div class="visible-xs">
+			<h2><i class="fa {{ page.icon }}"></i> {{ page.title }}</h2>
+		    </div>
 		</div>
 	    </div>
 
@@ -44,15 +50,6 @@
 
 	    <div class="row">
 		<hr/>
-
-		<div class="visible-xs visible-sm">
-		    <ul class="nav nav-pills pull-right">
-			{% for item in page.navigation %}
-			<li><a href="{{ item['link'] }}"><i class="fa {{ item['icon'] }}"></i> <span class="visible-md-inline visible-lg-inline">{{ item['name'] }}</span></a></li>
-			{% end %}
-		    </ul>
-		</div>
-
 		<footer class="text-center">
 		    <p class="text-muted">
 		    <small>
