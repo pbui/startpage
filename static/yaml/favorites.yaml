@@ -1,0 +1,23 @@
+- name: Reddit
+  link: https://reddit.com
+  icon: fa-reddit
+
+- name: Hacker News
+  link: https://news.ycombinator.com
+  icon: fa-hacker-news
+
+- name: Slashdot
+  link: https://slashdot.org
+  icon: fa-code
+
+- name: Digg
+  link: https://digg.com
+  icon: fa-digg
+
+- name: Metafilter
+  link: https://metafilter.com
+  icon: fa-filter
+
+- name: Memeorandum
+  link: https://www.memeorandum.com/
+  icon: fa-newspaper-o

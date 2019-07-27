@@ -1,0 +1,79 @@
+title:      Start Page
+icon:       fa-sitemap
+prefix:     /
+navigation:
+  - name:   "Home"
+    link:   "https://www3.nd.edu/~pbui/"
+    icon:   "fa-home"
+  - name:   "GitLab"
+    link:   "https://gitlab.com/pbui"
+    icon:   "fa-gitlab"
+  - name:   "GitHub"
+    link:   "https://github.com/pbui"
+    icon:   "fa-github"
+  - name:   "Yld.Me"
+    link:   "https://yld.me"
+    icon:   "fa-copy"
+internal:
+external:
+  favorites:    static/yaml/favorites.yaml
+body:   |
+
+  <div class="row">
+    <div class="col-md-3">
+    </div>
+    <div class="col-md-6"
+      <form class="form" action="https://duckduckgo.com" method="GET">
+        <div class="input-group">
+          <input type="text" name="q" class="form-control" placeholder="Search...">
+          <span class="input-group-btn">
+            <button class="btn btn-primary" type="submit">
+              <i class="fa fa-search"></i>
+            </button>
+          </span>
+        </div>
+      </form>
+    </div>
+    <div class="col-md-3">
+    </div>
+  </div>
+
+  <br>
+  <br>
+  
+  <div class="row">
+    {% for index, favorite in enumerate(page.external['favorites'], 1) %}
+    <div class="col-sm-4 text-center">
+      <a href="{{ favorite['link'] }}">
+        <i class="fa {{ favorite['icon'] }} fa-5x"></i>
+      </a>
+      <h4>
+        <a href="{{ favorite['link'] }}">{{ favorite['name'] }}</a>
+      </h4>
+    </div>
+    {% if index % 3 == 0 %}
+    </div>
+    <div class="row">
+    {% end %}
+    {% end %}
+  </div>
+  
+  <br>
+
+  <div class="row">
+    <div class="col-md-12">
+      <table class="table table-striped">
+      {% set log_path = '/home/pbui/.weechat/logs/irc.snoonet.#paperboy.weechatlog' %}
+      {% set log_data = [l.strip().split('\t')[-1] for l in open(log_path) if 'bobbit' in l] %}
+      {% for article in reversed(log_data[-20:]) %}
+      {% set article_site  = article.split(':')[0].strip() %}
+      {% set article_title = article.split(':')[1].split('@')[0].strip() %}
+      {% set article_link  = article.split('@')[-1].strip() %}
+      <tr>
+        <td class="text-strong">{{ article_site }}</td>
+        <td class="text-strong"><a href="{{ article_link }}">{{ article_title }}</a></td>
+      </tr>
+      {% end %}
+      </table>
+    </div>
+  </div>
