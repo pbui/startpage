@@ -13,7 +13,7 @@ navigation:
     icon:   "fa-github"
   - name:   "Yld.Me"
     link:   "https://yld.me"
-    icon:   "fa-copy"
+    icon:   "fa-clipboard"
 internal:
 external:
   favorites:    static/yaml/favorites.yaml
@@ -22,8 +22,8 @@ body:   |
   <div class="row">
     <div class="col-md-3">
     </div>
-    <div class="col-md-6"
-      <form class="form" action="https://duckduckgo.com" method="GET">
+    <div class="col-md-6">
+      <form class="form" action="https://duckduckgo.com" method="GET" target="_blank">
         <div class="input-group">
           <input type="text" name="q" class="form-control" placeholder="Search...">
           <span class="input-group-btn">
@@ -39,25 +39,18 @@ body:   |
   </div>
 
   <br>
-  <br>
-  
+
   <div class="row">
     {% for index, favorite in enumerate(page.external['favorites'], 1) %}
-    <div class="col-sm-4 text-center">
+    <div class="col-xs-4 col-md-2 text-center">
       <a href="{{ favorite['link'] }}">
-        <i class="fa {{ favorite['icon'] }} fa-5x"></i>
+        <i class="fa {{ favorite['icon'] }} fa-4x"></i>
       </a>
-      <h4>
-        <a href="{{ favorite['link'] }}">{{ favorite['name'] }}</a>
-      </h4>
+      <h5><a href="{{ favorite['link'] }}">{{ favorite['name'] }}</a></h5>
     </div>
-    {% if index % 3 == 0 %}
-    </div>
-    <div class="row">
-    {% end %}
     {% end %}
   </div>
-  
+
   <br>
 
   <div class="row">
