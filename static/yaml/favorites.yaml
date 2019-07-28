@@ -6,6 +6,10 @@
   link: https://news.ycombinator.com
   icon: fa-hacker-news
 
+- name: Lobsters
+  link: https://lobste.rs
+  icon: fa-gbp
+
 - name: Slashdot
   link: https://slashdot.org
   icon: fa-code
@@ -18,6 +22,10 @@
   link: https://metafilter.com
   icon: fa-filter
 
-- name: Memeorandum
-  link: https://www.memeorandum.com/
-  icon: fa-newspaper-o
+#- name: Memeorandum
+#  link: https://www.memeorandum.com/
+#  icon: fa-newspaper-o
+
+#- name: Fark
+#  link: https://www.fark.com/
+#  icon: fa-facebook
