@@ -42,7 +42,7 @@ body:   |
 
   <div class="row">
     {% for index, favorite in enumerate(page.external['favorites'], 1) %}
-    <div class="col-xs-4 col-md-2 text-center">
+    <div class="col-xs-4 col-md-1-5 text-center">
       <a href="{{ favorite['link'] }}">
         <i class="fa {{ favorite['icon'] }} fa-4x"></i>
       </a>
@@ -59,6 +59,7 @@ body:   |
       {% set log_path = '/home/pbui/.weechat/logs/irc.snoonet.#paperboy.weechatlog' %}
       {% set log_data = [l.strip().split('\t')[-1] for l in open(log_path) if 'bobbit' in l] %}
       {% for article in reversed(log_data[-50:]) %}
+      {% if ':' in article %}
       {% set article_site  = article.split(':', 1)[0].strip() %}
       {% set article_title = article.split(':', 1)[1].split('@')[0].strip() %}
       {% set article_link  = article.split('@')[-1].strip() %}
@@ -66,6 +67,7 @@ body:   |
         <td class="text-strong">{{ article_site }}</td>
         <td class="text-strong"><a href="{{ article_link }}">{{ article_title }}</a></td>
       </tr>
+      {% end %}
       {% end %}
       </table>
     </div>
