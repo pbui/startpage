@@ -22,10 +22,6 @@
   link: https://metafilter.com
   icon: fa-filter
 
-#- name: Memeorandum
-#  link: https://www.memeorandum.com/
-#  icon: fa-newspaper-o
-
-#- name: Fark
-#  link: https://www.fark.com/
-#  icon: fa-facebook
+- name: Memeorandum
+  link: https://www.memeorandum.com/
+  icon: fa-newspaper-o
