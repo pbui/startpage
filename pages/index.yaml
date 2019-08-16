@@ -61,8 +61,13 @@ body:   |
       {% for article in reversed(log_data[-50:]) %}
       {% if ':' in article %}
       {% set article_site  = article.split(':', 1)[0].strip() %}
-      {% set article_title = article.split(':', 1)[1].split('@')[0].strip() %}
-      {% set article_link  = article.split('@')[-1].strip() %}
+      {% if 'https://t.co/' in article %}
+        {% set article_title = article.split(':', 1)[1].strip() %}
+        {% set article_link  = article.split()[-1] %}
+      {% else %}
+        {% set article_title = article.split(':', 1)[1].rsplit('@', 1)[0].strip() %}
+        {% set article_link  = article.rsplit('@', 1)[-1].strip() %}
+      {% end %}
       <tr>
         <td class="text-strong">{{ article_site }}</td>
         <td class="text-strong"><a href="{{ article_link }}">{{ article_title }}</a></td>
