@@ -32,11 +32,11 @@ PageFields = 'title prefix icon navigation internal external body'.split()
 Page       = collections.namedtuple('Page', PageFields)
 
 def load_page_from_yaml(path):
-    data     = yaml.load(open(path))
+    data     = yaml.safe_load(open(path))
     external = data.get('external', {}) or {}
 
     for k, v in external.items():
-        data['external'][k] = yaml.load(open(v))
+        data['external'][k] = yaml.safe_load(open(v))
 
     if 'prefix' not in data:
         data['prefix'] = ''
