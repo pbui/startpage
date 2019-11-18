@@ -18,6 +18,10 @@
   link: https://digg.com
   icon: fa-digg
 
+- name: Tildes
+  link: https://tildes.net/
+  icon: fa-list-alt
+
 - name: Metafilter
   link: https://metafilter.com
   icon: fa-filter
