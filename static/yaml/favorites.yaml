@@ -10,6 +10,10 @@
   link: https://lobste.rs
   icon: fa-gbp
 
+- name: Tildes
+  link: https://tildes.net/
+  icon: fa-list-alt
+
 - name: Slashdot
   link: https://slashdot.org
   icon: fa-code
@@ -18,13 +22,17 @@
   link: https://digg.com
   icon: fa-digg
 
-- name: Tildes
-  link: https://tildes.net/
-  icon: fa-list-alt
+#- name: Metafilter
+#  link: https://metafilter.com
+#  icon: fa-filter
 
-- name: Metafilter
-  link: https://metafilter.com
-  icon: fa-filter
+#- name: Fark
+#  link: https://fark.com
+#  icon: fa-facebook
+
+- name: NPR
+  link: https://www.npr.org/
+  icon: fa-podcast
 
 - name: Memeorandum
   link: https://www.memeorandum.com/
