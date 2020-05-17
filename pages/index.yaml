@@ -5,9 +5,9 @@ navigation:
   - name:   "Home"
     link:   "https://www3.nd.edu/~pbui/"
     icon:   "fa-home"
-  - name:   "GitLab"
-    link:   "https://gitlab.com/pbui"
-    icon:   "fa-gitlab"
+    #  - name:   "GitLab"
+    #link:   "https://gitlab.com/pbui"
+    #icon:   "fa-gitlab"
   - name:   "GitHub"
     link:   "https://github.com/pbui"
     icon:   "fa-github"
@@ -17,6 +17,7 @@ navigation:
 internal:
 external:
   favorites:    static/yaml/favorites.yaml
+  paperboy:     static/yaml/paperboy.yaml
 body:   |
 
   <div class="row">
@@ -55,20 +56,46 @@ body:   |
 
   <div class="row">
     <div class="col-md-12">
-      <table class="table table-striped">
-      {% set log_path = '/home/pbui/.weechat/logs/irc.snoonet.#paperboy.weechatlog' %}
-      {% set log_data = [l.strip().split('\t')[-1] for l in open(log_path) if 'bobbit' in l] %}
-      {% for article in reversed(log_data[-50:]) %}
-      {% if ':' in article %}
-      {% set article_site  = article.split(':', 1)[0].strip() %}
-      {% set article_title = article.split(':', 1)[1].rsplit('@', 1)[0].strip() %}
-      {% set article_link  = article.rsplit('@', 1)[-1].strip() %}
-      <tr>
-        <td class="text-strong">{{ article_site }}</td>
-        <td class="text-strong"><a href="{{ article_link }}">{{ article_title }}</a></td>
-      </tr>
-      {% end %}
-      {% end %}
-      </table>
+      <div class="panel panel-primary">
+        <div class="panel-heading">
+          <h3 class="panel-title">Recent</h3>
+        </div>
+        <table class="table table-striped">
+        {% for article in page.external['paperboy']['recent'] %}
+        <tr>
+          <td class="text-strong">{{ article['site'] }}</td>
+          <td class="text-strong"><a href="{{ article['link'] }}">{{ article['title'] }}</a></td>
+        </tr>
+        {% end %}
+        </table>
+      </div>
     </div>
+
+    <br>
+
+  </div>
+  
+  <div class="row">
+    {% for index, site in enumerate(page.external['paperboy']['articles'], 1) %}
+    {% set articles    = page.external['paperboy']['articles'][site] %}
+    {% set panel_level = 'primary' %}
+    <div class="col-md-4">
+      <div class="panel panel-{{ panel_level }}">
+        <div class="panel-heading">
+          <h3 class="panel-title">{{ site }}</h3>
+        </div>
+        <table class="table table-striped">
+        {% for article in articles[:5] %}
+        <tr>
+          <td class="text-strong"><a href="{{ article['link'] }}">{{ article['title'] }}</a></td>
+        </tr>
+        {% end %}
+        </table>
+      </div>
+    </div>
+    {% if index % 3 == 0 %}
+  </div>
+  <div class="row">
+    {% end %}
+    {% end %}
   </div>
