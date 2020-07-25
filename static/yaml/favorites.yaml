@@ -1,6 +1,6 @@
-- name: Reddit
-  link: https://reddit.com
-  icon: fa-reddit
+#- name: Reddit
+#  link: https://reddit.com
+#  icon: fa-reddit
 
 - name: Hacker News
   link: https://news.ycombinator.com
@@ -14,25 +14,33 @@
   link: https://tildes.net/
   icon: fa-list-alt
 
+- name: Fark
+  link: https://fark.com
+  icon: fa-facebook
+
+- name: Slashdot
+  link: https://slashdot.org
+  icon: fa-code
+
 - name: Digg
   link: https://digg.com
   icon: fa-digg
 
-- name: Metafilter
-  link: https://metafilter.com
-  icon: fa-filter
+#- name: Metafilter
+#  link: https://metafilter.com
+#  icon: fa-filter
 
-- name: Conversation
-  link: https://theconversation.com
+#- name: Ruqqus
+#  link: https://ruqqus.com
+#  icon: fa-comments
+
+- name: Lemmy
+  link: https://dev.lemmy.ml/
   icon: fa-comments
 
-#- name: Fark
-#  link: https://fark.com
-#  icon: fa-facebook
-
-#- name: NPR
-#  link: https://www.npr.org/
-#  icon: fa-podcast
+- name: NPR
+  link: https://www.npr.org/
+  icon: fa-podcast
 
 - name: Memeorandum
   link: https://www.memeorandum.com/
