@@ -52,8 +52,6 @@ body:   |
     {% end %}
   </div>
 
-  <br>
-
   <div class="row">
     <div class="col-md-12">
       <table class="table table-striped">
@@ -61,9 +59,9 @@ body:   |
         <th class="text-primary" style="font-size: 125%">Recent</th>
         <th></th>
       </thead>
-      {% for article in page.external['paperboy']['recent'] %}
+      {% for article in page.external['paperboy']['recent'][:12] %}
       <tr class="table-bordered">
-        <td class="text-strong">{{ article['site'] }}</td>
+      <td class="text-strong" width="130px">{{ article['site'] }}</td>
         <td class="text-strong"><a href="{{ article['link'] }}">{{ article['title'] }}</a></td>
       </tr>
       {% end %}
@@ -81,7 +79,7 @@ body:   |
         <thead>
           <th class="text-primary" style="font-size: 125%">{{ site }}</th>
         </thead>
-        {% for article in articles[:5] %}
+        {% for article in articles[:6] %}
         <tr class="table-bordered">
           <td class="text-strong"><a href="{{ article['link'] }}">{{ article['title'] }}</a></td>
         </tr>
