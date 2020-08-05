@@ -7,8 +7,8 @@ import yaml
 
 # Configuration
 
-RECENT_LIMIT  = 10
-ARTICLE_LIMIT = 200
+RECENT_LIMIT  = 20
+ARTICLE_LIMIT = 500
 LOG_PATH      = '/home/pbui/.weechat/logs/irc.bx612.#paperboy.weechatlog'
 
 # Main Execution
