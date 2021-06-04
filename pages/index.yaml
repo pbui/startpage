@@ -61,7 +61,7 @@ body:   |
       </thead>
       {% for article in page.external['paperboy']['recent'][:12] %}
       <tr class="table-bordered">
-      <td class="text-strong" width="130px">{{ article['site'] }}</td>
+      <td class="text-strong" width="135px">{{ article['site'] }}</td>
         <td class="text-strong"><a href="{{ article['link'] }}">{{ article['title'] }}</a></td>
       </tr>
       {% end %}
