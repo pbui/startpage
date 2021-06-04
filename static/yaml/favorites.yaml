@@ -1,7 +1,3 @@
-#- name: Reddit
-#  link: https://reddit.com
-#  icon: fa-reddit
-
 - name: Hacker News
   link: https://news.ycombinator.com
   icon: fa-hacker-news
@@ -11,37 +7,77 @@
   icon: fa-gbp
 
 - name: Tildes
-  link: https://tildes.net/
+  link: https://tildes.net
   icon: fa-list-alt
+
+#- name: Slashdot
+#  link: https://slashdot.org
+#  icon: fa-code
+
+#- name: Hackaday
+#  link: https://hackaday.com
+#  icon: fa-wrench
 
 - name: Fark
   link: https://fark.com
   icon: fa-facebook
 
-- name: Slashdot
-  link: https://slashdot.org
-  icon: fa-code
-
-- name: Digg
-  link: https://digg.com
-  icon: fa-digg
+#- name: Boing Boing
+#  link: https://boingboing.net
+#  icon: fa-database
 
 #- name: Metafilter
 #  link: https://metafilter.com
 #  icon: fa-filter
 
-#- name: Ruqqus
-#  link: https://ruqqus.com
+#- name: Gurlic
+#  link: https://gurlic.com/
+#  icon: fa-glide-g
+
+- name: Gaming on Linux
+  link: https://www.gamingonlinux.com/
+  icon: fa-gamepad
+
+- name: Polygon
+  link: https://www.polygon.com
+  icon: fa-cube
+
+- name: Marginal Revolution
+  link: https://marginalrevolution.com/
+  icon: fa-globe
+
+#- name: Nintendo Life
+#  link: https://www.nintendolife.com
+#  icon: fa-heartbeat
+
+#- name: Steam
+#  link: https://store.steampowered.com/
+#  icon: fa-steam
+
+- name: The Ringer
+  link: https://www.theringer.com/
+  icon: fa-dot-circle-o
+
+#- name: Lemmy
+#  link: https://dev.lemmy.ml
 #  icon: fa-comments
 
-- name: Lemmy
-  link: https://dev.lemmy.ml/
-  icon: fa-comments
+#- name: Digg
+#  link: https://digg.com
+#  icon: fa-digg
 
-- name: NPR
-  link: https://www.npr.org/
-  icon: fa-podcast
+#- name: Ruqqus
+#  link: https://ruqqus.com
+#  icon: fa-commenting-o
 
-- name: Memeorandum
-  link: https://www.memeorandum.com/
-  icon: fa-newspaper-o
+#- name: Memeorandum
+#  link: https://www.memeorandum.com/
+#  icon: fa-newspaper-o
+
+#- name: Reddit
+#  link: https://reddit.com
+#  icon: fa-reddit
+
+#- name: NPR
+#  link: https://www.npr.org/
+#  icon: fa-podcast
