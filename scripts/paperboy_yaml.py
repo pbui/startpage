@@ -19,24 +19,34 @@ RECENT   = []
 ARTICLES = collections.defaultdict(list)
 
 for index, article in enumerate(reversed(LOG_DATA)):
-    article_site  = article.split(':', 1)[0].strip()
-    article_title = article.split(':', 1)[1].rsplit('@', 1)[0].strip().replace('\t', ' ')
-    article_link  = article.rsplit('@', 1)[-1].strip()
+    if '#' in article.split('by')[-1]:
+        article_author = article.split(':', 1)[0].strip()
+        article_title  = article.split(':', 1)[1].rsplit('@', 1)[0].strip().replace('\t', ' ')
+        article_link   = article.rsplit('@', 1)[-1].split('#')[0].strip()
+        article_site   = article.rsplit('#', 1)[-1].strip()
+    else:
+        article_site   = article.split(':', 1)[0].strip()
+        article_title  = article.split(':', 1)[1].rsplit('@', 1)[0].strip().replace('\t', ' ')
+        article_link   = article.rsplit('@', 1)[-1].strip()
+        article_title, article_author = article_title.rsplit(' by ', 1)
+        article_author = article_author.split('(')[0].strip()
 
     if index >= ARTICLE_LIMIT:
         break
 
     if index < RECENT_LIMIT:
         RECENT.append({
-            'site' : article_site,
-            'title': article_title,
-            'link' : article_link,
+            'site'  : article_site,
+            'title' : article_title,
+            'link'  : article_link,
+            'author': article_author,
         })
 
     if len(ARTICLES[article_site]) < SITE_LIMIT:
         ARTICLES[article_site].append({
-            'title': article_title,
-            'link' : article_link,
+            'title' : article_title,
+            'link'  : article_link,
+            'author': article_author,
         })
 
 yaml.dump({'recent': RECENT, 'articles': dict(ARTICLES)}, sys.stdout, default_flow_style=False)
