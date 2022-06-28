@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 
-# Copyright (c) 2015- Peter Bui <peter.j.bui@gmail.com>
+# Copyright (c) 2022 Peter Bui <pbui@bx612.space>
 
 # Permission to use, copy, modify, and/or distribute this software for any
 # purpose with or without fee is hereby granted, provided that the above
@@ -22,11 +22,10 @@ import sys
 
 import dateutil.parser
 import tornado.template
-import markdown
-import markdown.extensions.codehilite
+import markdown2
 import yaml
 
-# Page -------------------------------------------------------------------------
+# Page
 
 PageFields = 'title prefix icon navigation internal external body'.split()
 Page       = collections.namedtuple('Page', PageFields)
@@ -44,7 +43,6 @@ def load_page_from_yaml(path):
     return Page(**data)
 
 def render_page(page):
-    hilite = markdown.extensions.codehilite.CodeHiliteExtension(noclasses=True)
     loader = tornado.template.Loader('templates')
     layout = u'''
 {{% extends "base.tmpl %}}
@@ -52,7 +50,7 @@ def render_page(page):
 {{% block body %}}
 {}
 {{% end %}}
-'''.format(markdown.markdown(page.body.encode('utf-8').decode('utf-8'), extensions=['extra', hilite]))
+'''.format(markdown2.markdown(page.body, extras=['fenced-code-blocks', 'footnotes', 'markdown-in-html', 'toc', 'tables']))
 
     template = tornado.template.Template(layout, loader=loader)
     settings = {
@@ -62,11 +60,14 @@ def render_page(page):
     }
     print(template.generate(**settings).decode())
 
-# Main Execution ---------------------------------------------------------------
+# Main Execution
 
-if __name__ == '__main__':
+def main():
     for path in sys.argv[1:]:
         page = load_page_from_yaml(path)
         render_page(page)
+
+if __name__ == '__main__':
+    main()
 
 # vim: set sts=4 sw=4 ts=8 expandtab ft=python:
