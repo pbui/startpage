@@ -61,8 +61,8 @@ body:   |
       </thead>
       {% for article in page.external['paperboy']['recent'][:12] %}
       <tr class="table-bordered">
-      <td class="text-strong" width="135px">{{ article['site'] }}</td>
-        <td class="text-strong"><a href="{{ article['link'] }}">{{ article['title'] }}</a></td>
+      <td class="text-strong" width="145px">{{ article['author'] }}</td>
+      <td class="text-strong"><a href="{{ article['link'] }}">{{ article['title'] }}</a></td>
       </tr>
       {% end %}
       </table>
@@ -77,10 +77,11 @@ body:   |
     <div class="col-md-4">
       <table class="table table-striped">
         <thead>
-          <th class="text-primary" style="font-size: 125%">{{ site }}</th>
+          <th class="text-primary" style="font-size: 125%" colspan="2">{{ site }}</th>
         </thead>
-        {% for article in articles[:6] %}
+        {% for article in articles[:12] %}
         <tr class="table-bordered">
+          <td class="text-strong" width="145px">{{ article['author'] }}</td>
           <td class="text-strong"><a href="{{ article['link'] }}">{{ article['title'] }}</a></td>
         </tr>
         {% end %}
