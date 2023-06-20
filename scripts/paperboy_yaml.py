@@ -8,8 +8,8 @@ import yaml
 # Configuration
 
 RECENT_LIMIT  = 20
-ARTICLE_LIMIT = 2000
-SITE_LIMIT    = 10
+ARTICLE_LIMIT = 5000
+SITE_LIMIT    = 20
 LOG_PATH      = '/home/pbui/.weechat/logs/irc.bx612.#paperboy.weechatlog'
 
 # Main Execution
@@ -17,6 +17,7 @@ LOG_PATH      = '/home/pbui/.weechat/logs/irc.bx612.#paperboy.weechatlog'
 LOG_DATA = [l.strip().split('\t', 2)[-1] for l in open(LOG_PATH) if 'bobbit' in l and '@' in l]
 RECENT   = []
 ARTICLES = collections.defaultdict(list)
+AUTHORS  = collections.defaultdict(list)
 
 for index, article in enumerate(reversed(LOG_DATA)):
     if '#' in article.split('by')[-1]:
@@ -49,4 +50,14 @@ for index, article in enumerate(reversed(LOG_DATA)):
             'author': article_author,
         })
 
-yaml.dump({'recent': RECENT, 'articles': dict(ARTICLES)}, sys.stdout, default_flow_style=False)
+    if len(AUTHORS[article_author]) < SITE_LIMIT:
+        AUTHORS[article_author].append({
+            'title' : article_title,
+            'link'  : article_link,
+        })
+
+yaml.dump(
+    {'recent': RECENT, 'articles': dict(ARTICLES), 'authors': dict(AUTHORS)},
+    sys.stdout,
+    default_flow_style=False
+)
