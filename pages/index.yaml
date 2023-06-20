@@ -43,11 +43,11 @@ body:   |
 
   <div class="row">
     {% for index, favorite in enumerate(page.external['favorites'], 1) %}
-    <div class="col-xs-4 col-md-1-5 text-center">
+    <div class="col-xs-2 text-center">
       <a href="{{ favorite['link'] }}">
-        <i class="fa {{ favorite['icon'] }} fa-4x"></i>
+        <i class="fa {{ favorite['icon'] }} fa-3x"></i>
       </a>
-      <h5><a href="{{ favorite['link'] }}">{{ favorite['name'] }}</a></h5>
+      <h6><a href="{{ favorite['link'] }}">{{ favorite['name'] }}</a></h6>
     </div>
     {% end %}
   </div>
