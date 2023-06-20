@@ -2,49 +2,65 @@
   link: https://news.ycombinator.com
   icon: fa-hacker-news
 
-- name: Lobsters
-  link: https://lobste.rs
-  icon: fa-gbp
+- name: Libreddit
+  link: https://libreddit.h4x0r.space
+  icon: fa-reddit
 
 - name: Tildes
   link: https://tildes.net
   icon: fa-list-alt
 
-#- name: Slashdot
-#  link: https://slashdot.org
-#  icon: fa-code
-
-#- name: Hackaday
-#  link: https://hackaday.com
-#  icon: fa-wrench
-
-- name: Fark
-  link: https://fark.com
-  icon: fa-facebook
-
-#- name: Boing Boing
-#  link: https://boingboing.net
-#  icon: fa-database
+#- name: Lobsters
+#  link: https://lobste.rs
+#  icon: fa-gbp
 
 #- name: Metafilter
 #  link: https://metafilter.com
 #  icon: fa-filter
 
+- name: Fark
+  link: https://fark.com
+  icon: fa-facebook
+
+#- name: Pluralistic
+#  link: https://pluralistic.net
+#  icon: fa-cc
+
+#- name: Common Sense
+#  link: https://bariweiss.substack.com/
+#  icon: fa-certificate
+
+#- name: Hackaday
+#  link: https://hackaday.com
+#  icon: fa-wrench
+
+#- name: Slashdot
+#  link: https://slashdot.org
+#  icon: fa-code
+
 #- name: Gurlic
 #  link: https://gurlic.com/
 #  icon: fa-glide-g
 
-- name: Gaming on Linux
-  link: https://www.gamingonlinux.com/
-  icon: fa-gamepad
+#- name: Digg
+#  link: https://digg.com
+#  icon: fa-digg
+
+#- name: Boing Boing
+#  link: https://boingboing.net
+#  icon: fa-database
+
+#- name: Memeorandum
+#  link: https://www.memeorandum.com/
+#  icon: fa-newspaper-o
 
 - name: Polygon
   link: https://www.polygon.com
   icon: fa-cube
 
-- name: Marginal Revolution
-  link: https://marginalrevolution.com/
-  icon: fa-globe
+#- name: Gaming on Linux
+#  link: https://www.gamingonlinux.com/
+#  icon: fa-gamepad
 
 #- name: Nintendo Life
 #  link: https://www.nintendolife.com
@@ -58,21 +74,13 @@
   link: https://www.theringer.com/
   icon: fa-dot-circle-o
 
+#- name: Marginal Revolution
+#  link: https://marginalrevolution.com/
+#  icon: fa-globe
+
 #- name: Lemmy
-#  link: https://dev.lemmy.ml
+#  link: https://lemmy.ml
 #  icon: fa-comments
-
-#- name: Digg
-#  link: https://digg.com
-#  icon: fa-digg
-
-#- name: Ruqqus
-#  link: https://ruqqus.com
-#  icon: fa-commenting-o
-
-#- name: Memeorandum
-#  link: https://www.memeorandum.com/
-#  icon: fa-newspaper-o
 
 #- name: Reddit
 #  link: https://reddit.com
