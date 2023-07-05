@@ -10,9 +10,13 @@
   link: https://tildes.net
   icon: fa-list-alt
 
-#- name: Lobsters
-#  link: https://lobste.rs
-#  icon: fa-gbp
+- name: Lemmy
+  link: https://lemmy.world
+  icon: fa-comments
+
+- name: Lobsters
+  link: https://lobste.rs
+  icon: fa-gbp
 
 #- name: Metafilter
 #  link: https://metafilter.com
@@ -54,9 +58,9 @@
 #  link: https://www.memeorandum.com/
 #  icon: fa-newspaper-o
 
-- name: Polygon
-  link: https://www.polygon.com
-  icon: fa-cube
+#- name: Polygon
+#  link: https://www.polygon.com
+#  icon: fa-cube
 
 #- name: Gaming on Linux
 #  link: https://www.gamingonlinux.com/
@@ -70,17 +74,13 @@
 #  link: https://store.steampowered.com/
 #  icon: fa-steam
 
-- name: The Ringer
-  link: https://www.theringer.com/
-  icon: fa-dot-circle-o
+#- name: The Ringer
+#  link: https://www.theringer.com/
+#  icon: fa-dot-circle-o
 
 #- name: Marginal Revolution
 #  link: https://marginalrevolution.com/
 #  icon: fa-globe
-
-#- name: Lemmy
-#  link: https://lemmy.ml
-#  icon: fa-comments
 
 #- name: Reddit
 #  link: https://reddit.com
