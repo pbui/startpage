@@ -8,8 +8,9 @@ import yaml
 # Configuration
 
 RECENT_LIMIT  = 20
-ARTICLE_LIMIT = 10000
-SITE_LIMIT    = 20
+ARTICLE_LIMIT = 2500
+SITE_LIMIT    = 100
+AUTHOR_LIMIT  = 10
 LOG_PATH      = '/home/pbui/.weechat/logs/irc.bx612.#paperboy.weechatlog'
 
 # Main Execution
@@ -43,17 +44,19 @@ for index, article in enumerate(reversed(LOG_DATA)):
             'author': article_author,
         })
 
+    if len(AUTHORS[article_author]) < AUTHOR_LIMIT:
+        AUTHORS[article_author].append({
+            'title' : article_title,
+            'link'  : article_link,
+        })
+    else:
+        continue
+
     if len(ARTICLES[article_site]) < SITE_LIMIT:
         ARTICLES[article_site].append({
             'title' : article_title,
             'link'  : article_link,
             'author': article_author,
-        })
-
-    if len(AUTHORS[article_author]) < SITE_LIMIT:
-        AUTHORS[article_author].append({
-            'title' : article_title,
-            'link'  : article_link,
         })
 
 yaml.dump(
